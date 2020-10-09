@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>menu</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="stylesheet" href="./swiper-4.5.3/dist/css/swiper.min.css">
+  <style>
+    body {
+      padding: 0;
+      margin: 0
+    }
+
+    ul,
+    li,
+    dl {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .topmenu .swiper-slide {
+      width: 100px !important;
+
+    }
+
+    .topmenu li.swiper-slide {
+      width: 100px;
+      margin: 0 !important;
+      background-color: rgb(71, 107, 119);
+      text-align: center;
+
+    }
+
+    .topmenu dl li {
+      width: 100px;
+    }
+
+    .topmenu dl li:hover {
+      color: rgb(245, 240, 240);
+      background-color: rgb(75, 186, 223);
+    }
+
+    .active {
+      color: rgb(245, 240, 240);
+    }
+
+
+    .topmenu li.swiper-slide div:hover {
+      color: rgb(248, 240, 240);
+    }
+
+    .topmenu {
+      height: 35px;
+      background-color: white;
+      border-bottom: 1px solid #CCCCCC;
+      padding: 0 10px;
+      line-height: 35px;
+      font-family: "微软雅黑"
+    }
+  </style>
+</head>
+
+<body id="mall">
+  <!-- Swiper -->
+  <div class="topmenu">
+    <div class="swiper-container">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide ">
+          <div>阿斯蒂芬</div>
+          <dl>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        </dl>
+        </li>
+        <li class="swiper-slide">时的风格</li>
+        <li class="swiper-slide">
+          <div> 啥都更好的</div>
+          <dl>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        </dl>
+        </li>
+        <li class="swiper-slide">
+          <span>hyi</span>
+          <dl>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        </dl>
+        </li>
+        <li class="swiper-slide">
+          风格</li>
+        <li class="swiper-slide">地方</li>
+        <li class="swiper-slide">蒂芬</li>
+        <li class="swiper-slide">撒方</li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./swiper-4.5.3/dist/js/swiper.min.js"></script>
+  <script>
+    $(function () {
+      var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 20,
+        slidesPerView: 'auto',
+        freeMode: true
+      });
+      $("dl").hide();
+      console.log($("#li.swiper-slide").children("div").get(0));
+      $($("#li.swiper-slide").children("div").get(0)).addClass('active')
+      $("li.swiper-slide").hover(function () {
+        $("li.swiper-slide").find("div").removeClass('active')
+        $(this).find("div").addClass('active')
+        $(this).find("dl").stop(true, true);
+        $(this).find("dl").slideDown();
+      }, function () {
+        $(this).find("dl").stop(true, true);
+        $(this).find("dl").slideUp();
+      });
+      $("dl li").click(function () {
+        $("dl").slideUp();
+      })
+    })
+
+  </script>
+</body>
+
+</html>

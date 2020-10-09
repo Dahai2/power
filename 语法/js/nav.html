@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+  <title>Document</title>
+</head>
+<style>
+  *,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav {
+    background-color: lightsalmon;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    overflow-x: scroll;
+    line-height: 50px;
+  }
+
+  ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    width: 660px;
+    /* position: absolute; */
+  }
+
+  li {
+    width: 110px;
+    background-color: rgb(114, 114, 92);
+    float: left;
+    text-align: center;
+
+  }
+
+  .nav li a {
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+  }
+
+  .nav li a.link {
+    float: left;
+    width: 108px;
+  }
+
+  .nav ul li a:hover {
+    color: #933;
+    display: block;
+  }
+
+  .nav ul li dl {
+    width: 108px;
+    border: 1px solid #C33;
+    font-size: 12px;
+    background: #FCC;
+    /* position: absolute;
+    top: 46px;
+    left: 0px; */
+  }
+
+  .nav dl dd a {
+    color: #933;
+  }
+
+  .nav dl dd a:hover {
+    color: #000;
+    background: #F36;
+    opacity: 0.5;
+  }
+
+  .clearfix:after {
+    /*伪元素是行内元素 正常浏览器清除浮动方法*/
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  .clearfix {
+    *zoom: 1;
+    /*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
+  }
+</style>
+
+<body>
+
+  <div class="nav">
+    <ul class="clearfix">
+      <li id="li0" class="mainmenu">
+        <a class="link" href="#">2</a>
+        <dl id="dl0">
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+        </dl>
+      </li>
+      <li id="li1" class="mainmenu">
+        <a class="link" href="#">2</a>
+        <dl id="dl1">
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+        </dl>
+      </li>
+      <li id="li2" class="mainmenu">
+        <a class="link" href="#">2</a>
+        <dl id="dl2">
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+        </dl>
+      </li>
+      <li id="li3" class="mainmenu">
+        <a class="link" href="#">2</a>
+        <dl id="dl3">
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+        </dl>
+      </li>
+      <li id="li4" class="mainmenu">
+        <a class="link" href="#">2</a>
+        <dl id="dl4">
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+        </dl>
+      </li>
+      <li id="li5" class="mainmenu">
+        <a class="link" href="#">2</a>
+        <dl id="dl5">
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <p>ggggggggggggggggggggggggggg</p>
+  </div>
+
+  <script>
+    let ul = document.getElementsByTagName('ul')
+    let lis = document.getElementsByTagName('li')
+    for (let i = 0; i < lis.length; i++) {
+      $('#li' + i).click(
+        function () {
+          console.log(i)
+          $('#dl' + i).css(
+            // "background": "#000000",
+            //"left", function (value) { return value = 110 * i + 'px'; }
+          )
+          // "width", function(index, value) {return parseFloat(value) * 1.2;}
+        }
+      )
+      // lis[i].style.
+
+      // $("div").click(function () {
+      //   $(this).css(
+      //     "width", function (index, value) { return parseFloat(value) * 1.2; }
+      //   );
+      // });
+
+      // $('lis[i]').css({
+      //   "top": "46px",
+      //   "left": "0+'i*110'+px"
+      // })
+      // $("p").css({ "background-color": "yellow", "font-size": "200%" });
+    }
+
+
+    $(function () {
+      //$("dl").hide();
+
+      $("li.mainmenu").hover(function () {
+        $(this).find("dl").stop(true, true);
+        $(this).find("dl").slideDown();
+      }, function () {
+        $(this).find("dl").stop(true, true);
+        $(this).find("dl").slideUp();
+      });
+
+    })
+  </script>
+</body>
+
+</html>

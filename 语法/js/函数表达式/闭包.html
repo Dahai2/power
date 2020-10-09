@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //闭包
+    function cteatNum() {
+      var num = 8
+      function cteatNum2() {
+        num = num + 2
+        console.log(num);
+      }
+      return cteatNum2
+    }
+    var c1 = cteatNum()
+    c1()
+    //2.
+    function eater(msg) {
+      var msg
+      var obj = {
+        eat: function () {
+          console.log('吃' + msg);
+        },
+        drink: function () {
+          console.log('喝' + msg);
+        }
+      }
+      return obj
+    }
+    var c2 = eater('苹果')
+    c2.eat()
+    var c3 = eater('苹果汁')
+    c3.drink()
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //递归函数： 函数通过名字调用自身
+    function fac(num) {
+      if (num <= 1) {
+        return num
+      } else {
+        return num * fac(num - 1)
+      }
+    }
+    let anc = fac
+    fac = null//fac 已经不再是函数，所以会报错
+    //console.log(anc(6));
+    //2.使用arguments.callee
+    function fac2(num) {
+      if (num <= 1) {
+        return num
+      } else {
+        return num + arguments.callee(num - 1)
+      }
+    }
+    let anc2 = fac2
+    fac2 = null//
+    console.log(anc2(6));//arguments.callee 指向正在执行的函数的指针，可用来代替函数名，但是严格模式下会报错
+    //3.使用发f()命名的函数表达式
+    let fac3 = (function f(num) {
+      if (num <= 1) {
+        return num
+      } else {
+        return num + f(num - 1)
+      }
+    })
+    console.log(fac3(6));
+  </script>
+
+</body>
+
+</html>

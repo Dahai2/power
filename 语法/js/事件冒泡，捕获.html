@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>事件冒泡</title>
+  <style type="text/css">
+    #grandfather {
+      width: 300px;
+      height: 300px;
+      background-color: green;
+      position: relative;
+    }
+
+    #father {
+      width: 200px;
+      height: 200px;
+      background-color: gold;
+    }
+
+    #son {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      left: 0;
+      top: 400px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="grandfather">
+    <div id="father">
+      <div id="son"></div>
+    </div>
+  </div>
+</body>
+<script src="http://s.yidaichu.com/r/libs/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+  // document.getElementsByTagName('body').addEventListener('onclick', function () {
+  //   alert("000")
+  // })
+
+  document.getElementById('grandfather').addEventListener('click', function () {
+    console.log("你爷爷");
+  })
+  document.getElementById('father').addEventListener('click', function () {
+    console.log("你爸爸");
+  })
+  document.getElementById('son').addEventListener('click', function () {
+    console.log("儿砸");
+  })
+
+
+    //Dom0 级，只支持事件冒泡
+    // $('body').click(function () {
+    //   alert('000');
+    // });
+    // $('.grandfather').click(function () {
+    //   alert('爷爷');
+    // });
+    // $('.father').click(function () {
+    //   alert('父亲');
+    // });
+    // $('.son').click(function (event) {//event代表当前事件
+    //   alert('儿子');
+    //   // //阻止事件冒泡
+    //   // event.stopPropagation();
+
+    //   //合并阻止操作：把阻止冒泡和阻止默认行为合并
+    //   return false;
+    // });
+
+    //阻止右键菜单
+    // $(document).contextmenu(function (event) {
+    //   // //阻止默认行为（原来右键能弹出菜单，阻止后无法弹出）
+    //   event.preventDefault();
+
+    //   //合并阻止
+    //   //return false;
+    // })
+
+</script>
+
+</html>

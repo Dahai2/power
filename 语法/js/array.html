@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let arr1 = ['zs', 'ls']
+    let arr2 = ['ww', 'zl']
+    let arr3 = ['ki', 'lo']
+    let arrall = arr1.concat(arr2, arr3)
+    document.write("<br/>" + arrall)
+    //去除数组最后一个
+    arrall.pop()
+    document.write("<br/>" + arrall)
+    //添加数组最后一个
+    arrall.push('ffe')
+    document.write("<br/>" + arrall)
+    //删除数组第一个元素
+    arrall.shift()
+    document.write("<br/>" + arrall)
+    //从数组 (1,4)选择之间元素，包含下标为 1
+    let arrnew = arrall.slice(1, 4)
+    document.write("<br/>" + arrnew)
+    //排序 默认按字母表排序
+    arrall.sort()
+    document.write("<br/>" + arrall)
+    //sort 数字类型排序
+    let arrnum = [1, 56, 21, 0, 5, 12]
+    document.write("<br/>" + arrnum)
+    arrnum.sort((a, b) => {
+      return a - b
+    })
+    document.write("<br/>" + arrnum)
+    arrnum.sort((a, b) => {
+      return b - a
+    })
+    document.write("<br/>" + arrnum)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #l1 {
+    width: 100%;
+    background-color: lightcoral;
+  }
+
+  #l2 {
+    width: 1%;
+    height: 30px;
+    line-height: 30px;
+    background-color: lightslategray;
+  }
+</style>
+
+<body>
+  <div id="l1">
+    <div id="l2">1%</div>
+  </div>
+  <button id="run" onclick="gogo()">点击下载</button>
+</body>
+<script>
+  function gogo() {
+    let l1 = document.getElementById('l1')
+    let l2 = document.getElementById('l2')
+    let width = 1
+    let runing = setInterval(run, 1000)
+    function run() {
+      if (width >= 100) {
+        clearInterval(runing)
+      } else {
+        width++
+        l2.style.width = width + '%'
+        l2.innerHTML = width + '%'
+      }
+
+    }
+  }
+
+</script>
+
+</html>

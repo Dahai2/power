@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box
+  }
+
+  body {
+    font-family: Verdana, sans-serif;
+  }
+
+  .mySlides {
+    display: none
+  }
+
+  /* 幻灯片容器 */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* 下一张 & 上一张 按钮 */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+  }
+
+  /* 定位 "下一张" 按钮靠右 */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* 标记符号 */
+  .dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #0f0f0f;
+  }
+</style>
+
+<body>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="https://c.runoob.com/wp-content/uploads/2017/01/img_mountains_wide.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://c.runoob.com/wp-content/uploads/2017/01/img_fjords_wide.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://c.runoob.com/wp-content/uploads/2017/01/img_nature_wide.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  <script>
+    let showIndex = 1
+
+    showSlide(showIndex)
+    //左右切换
+    function plusSlides(n) {
+      showSlide(showIndex += n)
+    }
+    // 小圆点切换
+    function currentSlide(n) {
+      showSlide(showIndex = n)
+    }
+    function showSlide(n) {
+      let i = 0
+      let slides = document.getElementsByClassName('mySlides')
+      let dots = document.getElementsByClassName('dot')
+      //初始化图片
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none'
+      }
+      //初始化小圆点
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace("active", "")
+      }
+      if (n > slides.length) { showIndex = 1 }
+      if (n < 1) { showIndex = slides.length }
+      slides[showIndex - 1].style.display = 'block'
+      dots[showIndex - 1].className += ' active'
+    }
+  </script>
+</body>
+
+</html>

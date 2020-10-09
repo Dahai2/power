@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //都是将number 变成 string
+    var a = 10.1
+    console.log(a.toFixed(2));//参数，小数点后 ()位
+    console.log(a.toExponential(1));//e
+    console.log(a.toPrecision(4));//参数是全部位数，包含小数点的前后
+
+    function bSort(arr) {
+  var len = arr.length;
+  for (var i = 0; i < len-1; i++) {
+    for (var j = 0; j < len - 1 - i; j++) {
+         // 相邻元素两两对比，元素交换，大的元素交换到后面
+        if (arr[j] > arr[j + 1]) {
+            var temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp; 
+
+             
+             
+        }
+    }
+  }
+  return arr;
+}
+
+//举个数组
+myArr = [20,18,27,19,35];
+//使用函数
+bSort(myArr)
+  </script>
+</body>
+
+</html>

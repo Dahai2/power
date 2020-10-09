@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .model {
+    background-color: khaki;
+    height: 200px;
+    text-align: center;
+    display: none;
+  }
+
+  .model-content {
+    height: 50%;
+    width: 80%;
+    background-color: lightcoral;
+    margin: 0 auto;
+  }
+
+  .close {
+    float: left;
+  }
+</style>
+
+<body>
+  <div>
+    <button id="open" class="open">打开弹窗</button>
+  </div>
+  <div id="model" class="model">
+    <div class="model-content">
+      <span id="close" class="close">&times;</span>
+      <p>内容</p>
+    </div>
+  </div>
+  <script>
+    let openModel = document.getElementById('open')
+    let model = document.getElementById('model')
+    let span = document.getElementById('close')
+    openModel.onclick = function () {
+      model.style.display = 'block'
+    }
+    span.onclick = function () {
+      model.style.display = 'none'
+    }
+
+  </script>
+</body>
+
+</html>

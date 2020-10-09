@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<style>
+  /* ul {
+    overflow: hidden;
+    position: relative;
+    list-style: none;
+    height: 60px;
+    width: 100%;
+
+  }
+
+  ul li {
+    line-height: 60px;
+    float: left;
+    padding: 10px 20px;
+    background: skyblue;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .2s linear;
+  }
+
+  ul span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #f60;
+    position: absolute;
+    bottom: 0;
+  }
+
+  ul li:hover {
+    color: red;
+  } */
+
+  /* nav */
+  .nav {
+    width: 100%;
+    height: 50px;
+    background-color: lightcoral;
+    margin: 0 auto;
+  }
+
+  .nav ul {
+    width: 180%;
+    list-style: none;
+    white-space: nowrap;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+  }
+
+  .nav li {
+    float: left;
+    width: 108px;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    display: block;
+  }
+
+
+
+  .nav li a {
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+  }
+
+
+  .nav ul li a:hover {
+    display: block;
+  }
+
+  .nav dl {
+    width: 108px;
+    border: 1px solid #C33;
+    font-size: 12px;
+    background: #FCC;
+    position: absolute;
+    top: 46px;
+    left: 0px;
+    margin-top: 3px;
+  }
+
+  .nav dl dd a {
+    color: #933;
+  }
+
+  .nav dl dd a:hover {
+    color: #000;
+    background: #F36;
+    opacity: 0.5;
+  }
+
+  .clearfix:after {
+    /*伪元素是行内元素 正常浏览器清除浮动方法*/
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  .clearfix {
+    *zoom: 1;
+    /*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
+  }
+</style>
+
+<body>
+  <div class="nav">
+    <ul class=".clearfix">
+      <li><a class="link" href="#">1</a></li>
+      <li class="mainmenu">
+        <a class="link" href="#">2</a>
+        <dl>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+          <dd><a href="#">1.1</a></dd>
+        </dl>
+      </li>
+      <li class="mainmenu">
+        <a class="link" href="#">3</a>
+      </li>
+      <li class="mainmenu">
+        <a class="link" href="#">4</a>
+      </li>
+      <li class="mainmenu">
+        <a class="link" href="#">5</a>
+      </li>
+      <li class="mainmenu">
+        <a class="link" href="#">6</a>
+      </li>
+      <span class="line"></span>
+    </ul>
+  </div>
+  <script>
+    $(function () {
+      $("dl").hide();
+      $("li.mainmenu").hover(function () {
+        $(this).find("dl").stop(true, true);
+        $("dl").show();
+        $(this).find("dl").slideDown();
+      }, function () {
+        $(this).find("dl").stop(true, true);
+        $(this).find("dl").slideUp();
+      });
+
+    })
+  </script>
+</body>
+
+</html>

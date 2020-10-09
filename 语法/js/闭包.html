@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  //闭包 能够访问另一个函数作用域的变量 的函数
+  // A函数能够访问 B函数的作用域
+  //为什么闭包函数能访问其他 函数的作用域
+  //闭包 的英文 Closure 意思为暂时封闭 ，所以，闭包只是翻译 ，并不是一定要
+  //包起来 闭包
+  //闭包可以用来模仿 块级作用域
+  <a href="http://127.0.0.1:5500/账单.xlsx" download="测试下">
+    0000
+  </a>
+  <script>
+    // function foo() {
+    //   var local = 1
+    //   console.log(local);//此时为 1
+    // }
+    // foo() //一个变量写在 里边的 函数
+
+
+
+
+
+    // //
+    // function foo() {
+    //   var local = 1
+    //   console.log(local);//此时为 1
+    //   function bar() {
+    //     local = 666
+    //     console.log(local);//
+    //     return local
+    //   }
+    //   return bar   //
+    // }
+    // //foo() //
+    // var func = foo()// func
+    // func()
+
+    // //
+    // var func1 = function foo() {
+    //   var local = 1
+    //   console.log(local);//此时为 1
+    //   function bar() {
+    //     local = 666
+    //     console.log(local);//
+    //     return local
+    //   }
+    //   return bar   //
+    // }()         //会立即执行一次,1,  然后 func1 = return bar  
+    // func1()    // 666
+
+
+
+
+    //累加器
+    function add() {
+      var count = 0;
+      function demo() {
+        count++;
+        console.log(count);
+      }
+      return demo;
+    }
+    var counter = add();
+    counter();
+    counter();
+
+
+
+
+    //缓存
+    function eater() {
+      var food = "apple";
+      var obj = {
+        eat: function () {
+          if (food != "") {
+            console.log("i am eating " + food);
+            food = "";
+          } else {
+            console.log("eat emtpy ");
+          }
+        },
+        push: function (myFood) {
+          food = myFood;
+        }
+      }
+      return obj;
+    }
+    var eat1 = eater();
+    eat1.eat();
+    eat1.eat();
+    eat1.push('banana');
+    eat1.eat();
+
+
+
+
+    //myMOudule.js 定义一个模块，向外暴露多个函数，供外界调用
+    function myModule(msg) {
+      //console.log(msg);
+      //私有数据
+      var msg;//只申明不赋值的话，可以从外部传入参数
+      // var  msg = 'fhdshiosfjl' //申明并赋值就成为私有变量。传入参数也无法改变
+      //console.log(msg);
+      //操作私有数据的函数
+      function doSomething() {
+        console.log('doSomething() ' + msg.toUpperCase()); //字符串大写
+      }
+      function doOtherthing() {
+        console.log('doOtherthing() ' + msg.toLowerCase()) //字符串小写
+      }
+      //通过【对象字面量】的形式进行包裹，向外暴露多个函数
+      return {
+        doSomething1: doSomething,
+        doOtherthing2: doOtherthing
+      }
+    }
+    var s1 = myModule('ggddddd')
+    s1.doSomething1()
+    var s2 = myModule('KKHGIHGI')
+    s2.doOtherthing2()
+    // 2 通过
+    function myFunction() {
+      var lives = 30 //默认30条命
+      function addLive() {
+        lives++
+        console.log('奖励一条命,现在你有' + lives + '命');
+      }
+      function reduceLive() {
+        lives--
+        console.log('减少一条命，现在你还剩' + lives + '命');
+      }
+      return {
+        addLive: addLive,
+        reduceLive: reduceLive
+      }
+    }
+    myFunction().addLive() //31 没有声明变量的话，函数执行一次后就会销毁
+    myFunction().addLive() //31
+    var game = myFunction()
+    game.addLive() //奖励一条命 31
+    game.addLive()//32
+    game.reduceLive() //减少一条命 31
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //任何在函数中定义的变量都可以称之为  私有变量
+    function myFunction() {
+      //私有变量 和 私有函数
+      var privatNum = 10
+      function privatFunction() {
+        console.log('jj');
+      }
+      //特权方法
+      this.publicFun = function () {
+        privatNum++
+        console.log(privatNum);
+        return privatFunction()
+      }
+    }
+    let nc1 = new myFunction()
+    nc1.publicFun() 
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+基础
+1.css部分
+ 移动端常用的适配方式
+ css垂直水平居中
+ rem、em原理区别
+ 盒模型
+ 清除浮动的几种方式
+ css画三角形
+ BFC
+ 内联、import、support权重优先级
+ 2.html部分
+ H5新标签
+ 浏览器内核
+ 浏览器兼容
+ dom渲染
+ 3.js
+ get和post区别
+ 数据类型
+ JavaScript中的作用域与变量提升
+ 数组的方法
+ 浏览器渲染
+ 面向对象、闭包、原型、原型链
+ 事件机制、（冒泡、捕获）
+ 跨越及解决问题
+ ajax原理
+ 缓存（session、cookie、localstorage）原理，区别
+ jq
+ http状态码及含义
+ 异步加载 、 延迟加载
+ 4优化
+ 前端性能优化的方法
+ 优雅降级和渐进增强
+ 5 es6新特性
+  let const
+  变量的结构赋值
+  字符串、数值的扩展
+  promise的使用 ， 怎么用es5实现promise
+  
+ 二 vue
+ 组件之间传值方式有哪些
+ 父子组件 互相调用的方法方式
+ vue生命周期的理解 created 和 mounted之间的区别
+ vue组件中data是一个函数 而不是一个对象
+ vue computed和watch 的区别与使用场景
+ vue action 和 mutation之间的区别
+ v-show和v-if指令的共同点和不同点
+ vue优点和缺点
+ 说出几种vue当中的指令和它的用法
+ vue-loader是什么？使用它的用途有哪些
+ 为什么使用key
+ $nexTick的使用
+ vue双向数据绑定原理
+ vue路由实现，hash模式和history模式的区别
+ keepalive
+ $router 和$route 区别
+vue常用修饰符
+params和query的区别
+
+vue3.0的proxy解决了2.0的什么缺点
+

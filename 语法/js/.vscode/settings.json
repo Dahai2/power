@@ -1,0 +1,13 @@
+{
+  //html snippets 自动补全标签
+  "files.associations": {
+    "*.ejs": "html",
+    "*.js": "html",
+    "*.vue": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "vue": "html"
+  }
+}

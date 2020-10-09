@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //匿名函数
+    (function name(params) {
+      //私有的作用域
+      var i = 0
+      console.log(i);//0
+    })()
+    var i = 4
+    console.log(i);//4
+    function cta() {
+      let j = 5
+      console.log(j);
+    }
+    cta()//5
+    let j = 8
+    console.log(j);//8
+  </script>
+</body>
+
+</html>

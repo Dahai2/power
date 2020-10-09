@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1 数据属性
+    var person = {
+      name: 'namei'
+    }
+    Object.defineProperty(person, 'name', {
+      configurable: true,//能否通过delete删除属性，从而重新定义属性
+      writable: true,//能否修改属性的值
+      value: undefined,//包含这个属性的值
+      enumerable: true//能否通过forin循环返回属性
+
+    })
+    person.age = 55
+    console.log(person.name)//undefined
+    console.log(person.age)//55
+    console.log(person);
+    delete person.name
+    console.log(person);
+  </script>
+</body>
+
+</html>

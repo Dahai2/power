@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var htmls = '<table style="width:100%;text-align:left;border:1px solid skyblue;border-collapse:collapse; font-size: 15px;">\n<thead>\n<tr>\n';
+    var tableTitle = '';
+    // var unitName = data.records[0][data.struct.unit].split(',');
+    htmls += '<th class="label-cell style-table-title" style="font-size:15px;border:1px solid skyblue;color:#000;">' + data.struct.x + '</th>\n';
+    //表头
+    for (var z = 1; z < 15; z++) {
+      var titleName = data.struct["x" + z];
+      if (titleName !== undefined && data.records[0][titleName] !== undefined) {
+        htmls += '<th class="label-cell style-table-title" style="font-size: 15px;border:1px solid skyblue;color:#000;">' + titleName + '</th>\n';
+      }
+    }
+    //主体
+    htmls += '</tr>\n</thead>\n<tbody>\n';
+    for (var i = 0; i < data.records.length; i++) {
+      var html = '';
+      if (i % 2 == 0) {
+        html += '<tr  class=" style-table-one" >\n';
+      } else {
+        html += '<tr class=" style-table-two" >\n';
+      }
+      // html += '<td nowrap="" id="tdx_'+ i +'" class="label-cell" style="table-layout:fixed;padding-left:15px;padding-right:15px">'+ data.records[i][data.struct.x] + '</td>\n' +
+
+      if (data.records[i][data.struct.x] === undefined) {
+        html += '<td nowrap="" class="numeric-cell style-table-text" style="table-layout:fixed;padding-right:15px;border:1px solid skyblue">' + "-" + '</td>\n';
+      } else {
+        html += '<td nowrap="" class="numeric-cell style-table-text" style="table-layout:fixed;padding-right:15px;border:1px solid skyblue">' + data.records[i][data.struct.x] + '</td>\n';
+      }
+
+      //var uname  = data.struct[unit];
+      for (var j = 1; j < 15; j++) {
+        var titleName = data.struct["x" + j];
+
+        if (titleName !== undefined && data.records[i][titleName] !== undefined) {
+          var ySeValue = data.records[i][titleName];
+          if ($.isNumeric(ySeValue)) {
+            ySeValue = Number(data.records[i][titleName]).toFixed(2);
+          }
+          // if (unitName[0] == '万元') {
+          //     ySeValue = Number(data.records[i][titleName]).toFixed(0)
+          // }
+
+          ySeValue = ySeValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+          if (j > 3) {
+            if (ySeValue > 0) {
+              html += '<td nowrap="" class="numeric-cell style-table-text" style="table-layout:fixed;padding-right:15px;border:1px solid skyblue">' + ySeValue + '</td>\n';
+            } else {
+              html += '<td nowrap="" class="numeric-cell style-table-text" style="table-layout:fixed;padding-right:15px;border:1px solid skyblue">' + ySeValue + '</td>\n';
+            }
+          } else {
+            html += '<td nowrap="" class="numeric-cell style-table-text" style="table-layout:fixed;padding-right:15px;border:1px solid skyblue">' + ySeValue + '</td>\n';
+          }
+        }
+      }
+      html += '</tr>\n';
+      htmls += html;
+    }
+  </script>
+</body>
+
+</html>

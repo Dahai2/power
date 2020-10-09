@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./framework7/css/framework7.ios.min.css">
+  <link rel="stylesheet" href="./framework7/css/framework7.ios.colors.min.css">
+  <link rel="stylesheet" href="./framework7/css/framework7-icons.css">
+  <link rel="stylesheet" href="./framework7/css/kitchen-sink.css">
+  <title>Document</title>
+</head>
+<style>
+  .swiper-slide {
+    background: #fff;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+  }
+
+  .swiper-slide span {
+    text-align: center;
+    display: block;
+    margin: 20px;
+    font-size: 21px;
+  }
+
+  .swiper-container {
+    height: 120px;
+    margin: 35px 0;
+  }
+</style>
+
+<body>
+
+  <!-- Your main view, should have "view-main" class -->
+  <div class="view view-main">
+    <!-- Initial Page, "data-name" contains page name -->
+    <div data-name="home" class="page">
+      <!-- Scrollable page content -->
+      <div class="page-content">
+        <!-- Menu container -->
+        <div class="menu">
+          <div class="menu-inner">
+            <!-- Single menu item -->
+            <a href="#" class="menu-item">
+              <div class="menu-item-content">Item 1</div>
+            </a>
+            <a href="#" class="menu-item">
+              <div class="menu-item-content">Item 2</div>
+            </a>
+            <!-- Menu item with icon only -->
+            <a href="#" class="menu-item icon-only">
+              <div class="menu-item-content">
+                <i class="f7-icons">edit</i>
+              </div>
+            </a>
+
+            <!-- Menu item with dropdown -->
+            <div class="menu-item menu-item-dropdown">
+              <div class="menu-item-content">Left</div>
+              <!-- Dropdown container -->
+              <div class="menu-dropdown menu-dropdown-left">
+                <!-- Dropdown content -->
+                <div class="menu-dropdown-content">
+                  <!-- Dropdown link -->
+                  <a href="#" class="menu-dropdown-link menu-close">Menu Item 1</a>
+                  <a href="#" class="menu-dropdown-link menu-close">Menu Item 2</a>
+                  <a href="#" class="menu-dropdown-link menu-close">Menu Item 3</a>
+                  <a href="#" class="menu-dropdown-link menu-close">Menu Item 4</a>
+                  <!-- Dropdown divider -->
+                  <div class="menu-dropdown-divider"></div>
+                  <a href="#" class="menu-dropdown-link menu-close">Menu Item 5</a>
+                  <a href="#" class="menu-dropdown-link menu-close">Menu Item 6</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./framework7/js/framework7.min.js"></script>
+</body>
+
+</html>

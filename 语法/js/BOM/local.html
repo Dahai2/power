@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //console.log(window.location);
+    // console.log(document.location);
+    //查询字符串参数
+    var ls = "?q=js&num=100&name=jkl"
+    function getQueryStringArgs() {
+      //取得查询字符串，并去掉开头的问号
+      var qs = (ls.length > 0 ? ls.substring(1) : "")
+      //保存数据的地方
+      args = {}
+      //取得每一项
+      items = qs.length ? qs.split('&') : [],
+        item = null,
+        name = null,
+        value = null,
+        i = 0,
+        len = items.length
+      for (let i = 0; i < len; i++) {
+        item = items[i].split("=")
+        name = decodeURIComponent(item[0])
+        value = decodeURIComponent(item[1])
+        if (name.length) {
+          args[name] = value
+
+        }
+
+      }
+      return args
+    }
+    var arg = getQueryStringArgs(ls)
+    console.log(arg['q']);
+    console.log(arg.name);
+    console.log(arg["num"]);
+  </script>
+</body>
+
+</html>
